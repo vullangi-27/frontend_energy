@@ -6,7 +6,8 @@ import Auth from './components/Auth';
 import './App.css';
 
 // Base API URL for Spring Boot Backend
-const API_URL = 'http://localhost:8080/api/appliances';
+const BACKEND_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+const API_URL = `${BACKEND_BASE}/api/appliances`;
 
 function App() {
   const [currentUser, setCurrentUser] = useState(() => {
